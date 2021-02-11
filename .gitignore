@@ -1,0 +1,4 @@
+bin
+obj
+be/app/net5.0/
+be/app/Properties/launchSettings.json
