@@ -27,7 +27,7 @@ To start frontend locally run:
 
 <code>npm run serve</code>
 
-This command builds develop version and starts the app on <code>http://localhost:8080</code>. Hot reloading is enabled. Make sure that web app are using the correct backend address in **./fe/common/config.js**.
+This command builds develop version and starts the app on <code>http://localhost:8080</code>. Hot reloading is enabled. Make sure that the app are using the correct backend address in **./fe/common/config.js**.
 
 ## Start developing
 
