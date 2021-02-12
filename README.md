@@ -19,7 +19,7 @@ All packages will be restored and app will be running on 5000 and 5001 ports. Ho
 
 ## Frontend
 
-Restore the packages with npm. Install it from [here](https://nodejs.org/en/) if it does not installed yet. Then go to the **./fe** folder and run:
+Restore the packages with npm. Install Node.js from [here](https://nodejs.org/en/) if it does not installed yet. Then go to the **./fe** folder and run:
 
 <code>npm install</code>
 
