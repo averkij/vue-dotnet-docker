@@ -1,1 +1,1 @@
-export const SET_TEST = "set_test";
+export const GET_TEST = "get_test";

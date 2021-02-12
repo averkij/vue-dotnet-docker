@@ -27,8 +27,8 @@
           Backend app have one test API handler which returns random number.
         </p>
         <v-btn class="mt-5" @click="getNewNumber()">Get number</v-btn>
-        <p v-show="numberFromBackend" class="text-h4 font-weight-bold mt-5">
-          {{numberFromBackend}}
+        <p v-show="testItem" class="text-h4 font-weight-bold mt-5">
+          {{testItem}}
         </p>
       </v-col>
 
@@ -70,16 +70,28 @@
 </template>
 
 <script>
+  import {
+    mapGetters
+  } from "vuex";
+  import {
+    GET_TEST
+  } from "@/store/actions.type";
+
   export default {
     name: 'HelloWorld',
-
     data: () => ({
       numberFromBackend: null
     }),
     methods: {
       getNewNumber() {
-        this.numberFromBackend = 42;
+        this.$store
+          .dispatch(GET_TEST, {
+            someParameter: "foo"
+          });
       }
+    },
+    computed: {
+      ...mapGetters(["testItem"])
     }
   }
 </script>

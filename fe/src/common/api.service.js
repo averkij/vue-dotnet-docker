@@ -10,9 +10,37 @@ const ApiService = {
     Vue.use(VueAxios, axios);
     Vue.axios.defaults.baseURL = API_URL;
   },
-  //add POST, PUT, etc. methods here
+  query(resource, params) {
+    return Vue.axios.get(resource, params).catch(error => {
+      throw new Error(`ApiService ${error}`);
+    });
+  },
   get(resource, slug = "") {
-    return this.axios.get(`api/${resource}/${slug}`).catch(error => {
+    return Vue.axios.get(`api/${resource}/${slug}`).catch(error => {
+      alert("error");
+      throw new Error(`ApiService ${error}`);
+    });
+  },
+  download(resource, slug = "") {
+    return Vue.axios.get(`${resource}/${slug}`, {
+      responseType: 'blob'
+    }).catch(error => {
+      throw new Error(`ApiService ${error}`);
+    });
+  },
+  post(resource, slug, params) {
+    return Vue.axios.post(`${resource}/${slug}`, params).catch(error => {
+      throw new Error(`ApiService ${error}`);
+    });
+  },
+  update(resource, slug, params) {
+    return Vue.axios.put(`${resource}/${slug}`, params);
+  },
+  put(resource, params) {
+    return Vue.axios.put(`${resource}`, params);
+  },
+  delete(resource) {
+    return Vue.axios.delete(resource).catch(error => {
       throw new Error(`ApiService ${error}`);
     });
   }
@@ -21,8 +49,8 @@ const ApiService = {
 export default ApiService;
 
 export const ItemsService = {
-  getTest(params) {
-    return ApiService.get("test",
-      `/${params.someBeParameter}`);
+  getTest() {
+    console.log("invoke getTest", ApiService)
+    return ApiService.get("test");
   }
 };
