@@ -2,3 +2,5 @@ bin
 obj
 be/app/net5.0/
 be/app/Properties/launchSettings.json
+nginx/logs/access.log
+nginx/logs/error.log

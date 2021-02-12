@@ -21,11 +21,9 @@ namespace lingtrain_web
             //Custom CORS policy
             services.AddCors(options => options.AddPolicy("ApiCorsPolicy", builder =>
                 {
-                    builder.WithOrigins("http://localhost:8080").AllowAnyMethod().AllowAnyHeader();
+                    // builder.WithOrigins("http://localhost:8080").AllowAnyMethod().AllowAnyHeader();
+                    builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
                 }));
-            
-            //Allow all policy
-            // services.AddCors();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -43,17 +41,8 @@ namespace lingtrain_web
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "lingtrain_web v1"));
             }
             app.UseHttpsRedirection();
-            app.UseRouting();
-
-            //Custom CORS policy
-            app.UseCors("ApiCorsPolicy");    
-
-            //Allow all policy
-            // app.UseCors(builder => builder
-            // .AllowAnyOrigin()
-            // .AllowAnyMethod()
-            // .AllowAnyHeader());  
-
+            app.UseRouting();            
+            app.UseCors("ApiCorsPolicy"); 
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
