@@ -1,7 +1,7 @@
 # Web app boilerplate
 Minimal boilerplate web app using Vue.js and .NET 5 packed in docker for the simple deployment.
 
-![app](/img/app2.png)
+![app](/img/app.png)
 
 # Develop
 
