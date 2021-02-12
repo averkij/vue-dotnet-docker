@@ -24,7 +24,7 @@
           .NET 5 application
         </p>
         <p class="subheading font-weight-regular">
-          Backend app have one test API handler which returns random number.
+          Backend app have one test API handler which returns a random number.
         </p>
         <v-btn class="mt-5" @click="getNewNumber()">Get number</v-btn>
         <p v-show="testItem" class="text-h4 font-weight-bold mt-5">
@@ -61,9 +61,9 @@
           Deploy the app with a few commands.
         </p>
 
-        <p class="subheading font-weight-regular">
+        <!-- <p class="subheading font-weight-regular">
           <b>docker-compose.yaml</b> contains the deployment configuration.
-        </p>
+        </p> -->
       </v-col>
     </v-row>
   </v-container>
