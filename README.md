@@ -44,8 +44,6 @@ Inspect and document your API using Swagger which is already connected to the ap
 
 <code>https://localhost:5001/swagger/index.html</code>
 
-![swagger](/img/swagger.png)
-
 ### Vue.js
 
 Building the neat UI is not very complicated with Vuetify library.
