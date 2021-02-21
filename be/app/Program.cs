@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace lingtrain_web
+namespace Lingtrain
 {
     public class Program
     {

@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 
-namespace lingtrain_web
+namespace Lingtrain
 {
     public class Startup
     {
@@ -28,7 +28,7 @@ namespace lingtrain_web
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "lingtrain_web", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Lingtrain API", Version = "v1" });
             });
         }
 
@@ -38,12 +38,16 @@ namespace lingtrain_web
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "lingtrain_web v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Lingtrain Web v1"));
             }
             app.UseHttpsRedirection();
             app.UseRouting();            
-            app.UseCors("ApiCorsPolicy"); 
+            app.UseCors("ApiCorsPolicy");
+
+            //ConfigureAuth(app);
             app.UseAuthorization();
+
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
