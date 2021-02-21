@@ -61,3 +61,33 @@ Example of the UI ([source code](https://github.com/averkij/lingtrain-aligner)):
 # Deploy
 
 TBD
+
+# Initializing new Vue app
+
+- Install Vue CLI
+  - `npm install -g @vue/cli @vue/cli-service-global`
+- Create new project
+  - `vue create hello-world`
+- Add vuetify
+  - `vue add vuetify`
+- Add router
+  - `vue add router`
+- Add axios
+  - `npm install --save axios vue-axios`
+  - usage
+    `import axios from 'axios'`
+    `import VueAxios from 'vue-axios'`
+    `Vue.use(VueAxios, axios)`
+- Add vuex
+  - `npm install --save vuex`
+  - usage
+    `import Vue from 'vue'`
+    `import Vuex from 'vuex'`
+    `Vue.use(Vuex)`
+- Run in developer mode
+  - `npm run serve`
+  - app will be served on `localhost:8080`
+- Build for production
+  - `npm run build`
+  - app will be build into the `./dist` folder
+  
